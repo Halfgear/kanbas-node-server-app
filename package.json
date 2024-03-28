@@ -1,6 +1,6 @@
 {
   "name": "kanbas-node-server-app",
-  "type":"module",
+  "type": "module",
   "version": "1.0.0",
   "description": "Node.js HTTP Web server for the Kanbas Application",
   "main": "index.js",
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/Halfgear/kanbas-react-web-app#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.1"
   }
 }
