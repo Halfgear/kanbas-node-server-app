@@ -1,8 +1,5 @@
 import * as dao from "./dao.js";
 let currentUser = null;
-export default function QuizRoutes(app){
-
-}
 
 export default function UserRoutes(app) {
     const createUser = async (req, res) => {
