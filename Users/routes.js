@@ -1,3 +1,4 @@
+import { get } from "mongoose";
 import * as dao from "./dao.js";
 let currentUser = null;
 
@@ -46,8 +47,6 @@ export default function UserRoutes(app) {
             res.sendStatus(401);
         }
     };
-
-
     const signout = (req, res) => {
         req.session.destroy();
         res.sendStatus(200);
@@ -62,8 +61,6 @@ export default function UserRoutes(app) {
         }
         res.json(currentUser);
     };
-
-
     app.post("/api/users", createUser);
     app.get("/api/users", findAllUsers);
     app.get("/api/users/:userId", findUserById);
