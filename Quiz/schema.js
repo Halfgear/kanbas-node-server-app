@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema({
+    _id: {type: String, required: true},
     question_type: { type: Number, required: true },
     points: { type: Number, required: true },
     description: { type: String, required: true },
@@ -9,6 +10,7 @@ const questionSchema = new mongoose.Schema({
 });
 
 const quizSchema = new mongoose.Schema({
+    _id: {type: String, required: true},
     courseId: { type: String, required: true },
     title: { type: String, required: true },
     description: String,

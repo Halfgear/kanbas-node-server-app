@@ -7,9 +7,32 @@ export default function QuizRoutes(app) {
         res.json(quizzes);
     };
     app.get("/api/:courseId/quizzes", getQuizzesByCourseId);
-    // app.get("/api/quizzes/:qid", getQuizById);
-    // app.post("/api/quizzes", createQuiz);
-    // app.put("/api/quizzes/:qid", updateQuiz);
-    // app.delete("/api/quizzes/:qid", deleteQuiz);
+
+    const getQuizById = async (req, res) => {
+        const quizzes = await dao.getQuizById(req.params.qid);
+        res.json(quizzes);
+    };
+    app.get("/api/quizzes/:qid", getQuizById);
+
+    const createQuiz = async (req, res) => {
+        const quiz = await dao.createQuiz(req.body);
+        res.json(quiz);
+    };
+    app.post("/api/quizzes", createQuiz);
+
+    const updateQuiz = async (req, res) => {
+        const { quizId } = req.params;
+        const status = await dao.updateQuiz(quizId, req.body);
+        res.json(status);
+    };
+    app.put("/api/quizzes/:qid", updateQuiz);
+
+
+    const deleteQuiz = async (req, res) => {
+        const status = await dao.deleteQuiz(req.params.qid);
+        res.json(status);
+    };
+    app.delete("/api/quizzes/:qid", deleteQuiz);
+
     // app.get("/api/quizzes/:qid/questions", getQuestionsForQuiz);
 }

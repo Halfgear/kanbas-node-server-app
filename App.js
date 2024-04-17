@@ -8,8 +8,7 @@ import session from "express-session";
 import mongoose from "mongoose";
 import QuizRoutes from './Quiz/routes.js';
 
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas"
-
+const CONNECTION_STRING = "mongodb+srv://megalojoon:lostark@cluster0.ybd4ww0.mongodb.net/kanbas?retryWrites=true&w=majority&appName=Cluster0"
 
 const app = express()
 mongoose.connect(CONNECTION_STRING);
