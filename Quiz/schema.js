@@ -31,7 +31,7 @@ const quizSchema = new mongoose.Schema({
     untilDate: Date,
     questions: [questionSchema]
 },
-    { collection: 'quiz' } // changed to 'quizzes' assuming it aligns with your collection naming
+    { collection: 'quiz', strict: false} 
 );
 
 export default quizSchema;
