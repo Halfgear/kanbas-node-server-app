@@ -8,5 +8,5 @@ export const createQuiz = (quiz) => {
     quizModel.create(quiz);
 };
 
-export const updateUser = (quizId, quiz) =>  quizModel.updateOne({ _id: quizId }, { $set: quiz });
-export const deleteUser = (quizId) => quizModelodel.deleteOne({ _id: quizId });
+export const updateQuiz = (quizId, quiz) => quizModel.updateOne({ _id: quizId }, { $set: quiz });
+export const deleteQuiz = (quizId) => quizModel.deleteOne({ _id: quizId });

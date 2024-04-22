@@ -21,12 +21,11 @@ export default function QuizRoutes(app) {
     app.post("/api/quizzes", createQuiz);
 
     const updateQuiz = async (req, res) => {
-        const { quizId } = req.params;
-        const status = await dao.updateQuiz(quizId, req.body);
+        const { qid } = req.params;
+        const status = await dao.updateQuiz(qid, req.body);
         res.json(status);
     };
     app.put("/api/quizzes/:qid", updateQuiz);
-
 
     const deleteQuiz = async (req, res) => {
         const status = await dao.deleteQuiz(req.params.qid);
