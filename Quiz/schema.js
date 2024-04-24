@@ -16,7 +16,6 @@ const quizSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: String,
     quizType: { type: String, required: true },
-    points: { type: Number, required: true },
     assignmentGroup: String,
     shuffleAnswers: Boolean,
     timeLimit: Number,
