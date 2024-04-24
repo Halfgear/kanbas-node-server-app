@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema({
     _id: {type: String, required: true},
+    title: { type: String, required: true, default: "Question_Title"},
     question_type: { type: Number, required: true },
     points: { type: Number, required: true },
     description: { type: String, required: true },
